@@ -1,17 +1,3 @@
-;;========================================================================
-;; SISTEMA BASADO EN CONOCIMIENTO - MONO Y PLÁTANO (VERSIÓN MEJORADA)
-;;========================================================================
-;; Problemática: El mono necesita alcanzar el plátano colgado del techo
-;; usando una caja. Solo puede: caminar, empujar caja, subirse a caja,
-;; y agarrar plátanos.
-;;
-;; Ubicaciones: puerta, ventana, pared, centro
-;; Estados de manos: libres, ocupadas-caja
-;;========================================================================
-
-;;------------------------------------------------------------------------
-;; DEFINICIÓN DE TEMPLATES (Estructura de datos)
-;;------------------------------------------------------------------------
 
 ;; Template para representar el estado del mundo
 (deftemplate estado
@@ -54,7 +40,7 @@
 )
 
 ;;------------------------------------------------------------------------
-;; REGLA 1: Mono se desplaza hacia la caja (sin ocupar las manos)
+;; REGLA 1: Mono se desplaza hacia la caja 
 ;;------------------------------------------------------------------------
 
 (defrule mono-desplaza-hacia-caja
@@ -93,7 +79,7 @@
 )
 
 ;;------------------------------------------------------------------------
-;; REGLA 2: Mono se posiciona frente a la caja (pre-empujar)
+;; REGLA 2: Mono se posiciona frente a la caja 
 ;;------------------------------------------------------------------------
 
 (defrule mono-posiciona-caja
@@ -171,7 +157,7 @@
 )
 
 ;;------------------------------------------------------------------------
-;; REGLA 4: Mono suelta la caja (libera las manos)
+;; REGLA 4: Mono suelta la caja 
 ;;------------------------------------------------------------------------
 
 (defrule mono-suelta-caja
@@ -278,9 +264,9 @@
   (printout t crlf "─────────────────────────────────────────" crlf)
   (printout t "PASO " (+ ?paso 1) ": ¡¡¡MONO AGARRA EL PLÁTANO!!!" crlf)
   (printout t "─────────────────────────────────────────" crlf)
-  (printout t "▸ 🍌 ¡ÉXITO! El mono extiende su brazo" crlf)
+  (printout t "▸ El mono extiende su brazo" crlf)
   (printout t "▸ Sus MANOS LIBRES le permiten agarrar el plátano" crlf)
-  (printout t "▸ 🐵 ¡¡¡EL MONO TIENE EL PLÁTANO!!!" crlf)
+  (printout t "▸ EL MONO TIENE EL PLÁTANO!!!" crlf)
 )
 
 ;;------------------------------------------------------------------------
@@ -297,20 +283,20 @@
   (printout t "╔═══════════════════════════════════════╗" crlf)
   (printout t "║    ✓ ¡OBJETIVO COMPLETADO! ✓         ║" crlf)
   (printout t "╠═══════════════════════════════════════╣" crlf)
-  (printout t "║ El mono obtuvo el plátano            ║" crlf)
+  (printout t "║ El mono obtuvo el plátano             ║" crlf)
   (printout t "║ Pasos totales: " ?paso-final)
-  (printout t "                      ║" crlf)
+  (printout t "                                        ║" crlf)
   (printout t "║                                       ║" crlf)
-  (printout t "║ SECUENCIA DE ACCIONES:               ║" crlf)
-  (printout t "║ 1. Desplazarse a la caja            ║" crlf)
-  (printout t "║ 2. Posicionarse en la caja          ║" crlf)
-  (printout t "║ 3. Empujar caja al centro           ║" crlf)
-  (printout t "║ 4. Soltar la caja                   ║" crlf)
-  (printout t "║ 5. Subir a la caja                  ║" crlf)
-  (printout t "║ 6. Agarrar el plátano               ║" crlf)
+  (printout t "║ SECUENCIA DE ACCIONES:                ║" crlf)
+  (printout t "║ 1. Desplazarse a la caja              ║" crlf)
+  (printout t "║ 2. Posicionarse en la caja            ║" crlf)
+  (printout t "║ 3. Empujar caja al centro             ║" crlf)
+  (printout t "║ 4. Soltar la caja                     ║" crlf)
+  (printout t "║ 5. Subir a la caja                    ║" crlf)
+  (printout t "║ 6. Agarrar el plátano                 ║" crlf)
   (printout t "║                                       ║" crlf)
-  (printout t "║ 🔑 LECCIÓN CLAVE:                    ║" crlf)
-  (printout t "║ Las manos NO pueden estar ocupadas   ║" crlf)
-  (printout t "║ para agarrar el plátano!             ║" crlf)
+  (printout t "║  PUNTO CLAVE:                         ║" crlf)
+  (printout t "║ Las manos NO pueden estar ocupadas    ║" crlf)
+  (printout t "║ para agarrar el plátano!              ║" crlf)
   (printout t "╚═══════════════════════════════════════╝" crlf crlf)
 )
